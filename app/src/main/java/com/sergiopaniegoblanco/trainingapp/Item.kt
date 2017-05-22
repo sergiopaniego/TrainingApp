@@ -3,7 +3,11 @@ package com.sergiopaniegoblanco.trainingapp
 /**
  * Created by sergiopaniegoblanco on 22/05/2017.
  */
-data class Item(var title: String, val url: String) {
+data class Item(val id: Long, val title: String, val url: String)
+
+fun getItems(): List<Item>{
+    return (1..10).map { Item(it.toLong(), "Title: $it", "http://lorempixel.com/400/400/cats/$it/") }
+}
     /*
         The declaration above replaces the constructor, getter & setters used in Java
 
@@ -23,5 +27,3 @@ data class Item(var title: String, val url: String) {
             }
         var url: String = ""
     */
-
-}
